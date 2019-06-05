@@ -4,8 +4,10 @@ require "chromedriver-helper"
 
 describe "Walmyr's website" do
   it "scrolls to footer, clicks twitter icon, goes to 2nd tab and comes back, then goes to the top by clicking the header" do
+    my_website_url = "https://walmyr-filho.com/"
+
     driver = Selenium::WebDriver.for :chrome
-    driver.navigate.to "http://walmyr-filho-react.herokuapp.com/"
+    driver.navigate.to my_website_url
 
     # Sleeping just for the fun of watching the test run.
     sleep 1
@@ -30,7 +32,7 @@ describe "Walmyr's website" do
 
     driver.switch_to.window(driver.window_handles[0])
 
-    expect(driver.current_url).to eq("http://walmyr-filho-react.herokuapp.com/")
+    expect(driver.current_url).to eq(my_website_url)
 
     # Sleeping just for the fun of watching the test run.
     sleep 1
