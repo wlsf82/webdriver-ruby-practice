@@ -23,10 +23,14 @@ describe "Walmyr's website" do
 
     driver.switch_to.window(driver.window_handles[1])
 
+    expect(driver.current_url).to eq("https://www.youtube.com/user/wlsf82/videos")
+
     # Sleeping just for the fun of watching the test run.
     sleep 1
 
     driver.switch_to.window(driver.window_handles[0])
+
+    expect(driver.current_url).to eq("http://walmyr-filho-react.herokuapp.com/")
 
     # Sleeping just for the fun of watching the test run.
     sleep 1
